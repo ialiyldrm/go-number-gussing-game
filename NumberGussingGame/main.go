@@ -35,8 +35,11 @@ func main() {
 			fmt.Println(err)
 		} */
 
-		guess := input()//Oyuncudan tahmin alan ve bu tahmini integer döndüren func
-
+		guess,err := getInput()//Oyuncudan tahmin alan ve bu tahmini integer döndüren func
+		if err !=nil {
+			fmt.Println(err)
+		}
+		
 		if guess < 0 || guess > 99 {
 			fmt.Println("Lütfen 0-100 arasında bir değer giriniz.")
 			if isWrong {
@@ -95,7 +98,7 @@ func gameInfo(){
 	fmt.Println("Haydi oynayalım!")
 }
 
-func input()int{
+func getInput()(int,error){
 	fmt.Print("Tahmininizi giriniz: ")
 	reader := bufio.NewReader(os.Stdin)
 
@@ -109,5 +112,5 @@ func input()int{
 	if err != nil {
 		fmt.Println(err)
 	}
-	return guess
+	return guess,nil
 }
