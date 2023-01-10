@@ -35,7 +35,7 @@ func main() {
 			fmt.Println(err)
 		} */
 
-		guess := input()
+		guess := input()//Oyuncudan tahmin alan ve bu tahmini integer döndüren func
 
 		if guess < 0 || guess > 99 {
 			fmt.Println("Lütfen 0-100 arasında bir değer giriniz.")
